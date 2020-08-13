@@ -1,23 +1,45 @@
+/*
+ * Permission is hereby granted, free of charge, to any person obtaining a copy of
+ * this software and associated documentation files (the "Software"), to deal in the
+ * Software without restriction, including without limitation the rights to use, copy,
+ * modify, merge, publish, distribute, sublicense, and/or sell copies of the Software,
+ * and to permit persons to whom the Software is furnished to do so, subject to the
+ * following conditions:
+ *
+ * THE SOFTWARE IS PROVIDED "AS IS", WITHOUT WARRANTY OF ANY KIND, EXPRESS OR IMPLIED,
+ * INCLUDING BUT NOT LIMITED TO THE WARRANTIES OF MERCHANTABILITY, FITNESS FOR A
+ * PARTICULAR PURPOSE AND NONINFRINGEMENT. IN NO EVENT SHALL THE AUTHORS OR COPYRIGHT
+ * HOLDERS BE LIABLE FOR ANY CLAIM, DAMAGES OR OTHER LIABILITY, WHETHER IN AN ACTION OF
+ * CONTRACT, TORT OR OTHERWISE, ARISING FROM, OUT OF OR IN CONNECTION WITH THE SOFTWARE
+ * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
+ */
+
 import { Component } from '@angular/core';
 
 import { products } from './data';
 
+/*
+ * Renders a list of products and allows user to interact with them.
+ */
 @Component({
   selector: 'app-product-list',
-  templateUrl: './component.html',
-  styleUrls: ['./component.css']
+  templateUrl: './component.html'
 })
 export class ProductListComponent {
   products = products;
 
-  share() {
+  /*
+   * Invoked when the user chooses to get notified when the product goes on
+   * sale.
+   */
+  onNotify() {
+    window.alert('You will be notified when the product goes on sale.');
+  }
+
+  /*
+   * Invoked when the user chooses to share the product.
+   */
+  onShare() {
     window.alert('The product has been shared!');
   }
 }
-
-
-/*
-Copyright Google LLC. All Rights Reserved.
-Use of this source code is governed by an MIT-style license that
-can be found in the LICENSE file at http://angular.io/license
-*/

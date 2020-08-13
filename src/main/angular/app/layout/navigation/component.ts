@@ -14,6 +14,18 @@
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
- p {
-  font-family: Lato;
+import { Component, OnInit } from '@angular/core';
+
+/*
+ * Provides a navigation bar for the application.
+ */
+@Component({
+  selector: 'app-navigation',
+  templateUrl: './component.html'
+})
+export class NavigationComponent implements OnInit {
+  constructor() { }
+
+  ngOnInit() {
+  }
 }

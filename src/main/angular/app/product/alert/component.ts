@@ -14,6 +14,18 @@
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
- p {
-  font-family: Lato;
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+
+/*
+ * Generates an alert in response to a user request for being notifid when
+ * a product goes on sale.
+ */
+@Component({
+  selector: 'app-product-alert',
+  templateUrl: './component.html'
+})
+export class ProductAlertComponent {
+  @Input() product;
+
+  @Output() notify = new EventEmitter();
 }

@@ -14,6 +14,17 @@
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
- p {
-  font-family: Lato;
+import { Component, EventEmitter, Input, Output } from '@angular/core';
+
+/*
+ * Generates an alert in response to a user request for sharing a product.
+ */
+@Component({
+  selector: 'app-product-share',
+  templateUrl: './component.html'
+})
+export class ProductShareComponent {
+  @Input() product;
+
+  @Output() notify = new EventEmitter();
 }
