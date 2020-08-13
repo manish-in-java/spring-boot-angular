@@ -1,11 +1,11 @@
 import { Component } from '@angular/core';
 
-import { products } from '../products';
+import { products } from './data';
 
 @Component({
   selector: 'app-product-list',
-  templateUrl: './product-list.component.html',
-  styleUrls: ['./product-list.component.css']
+  templateUrl: './component.html',
+  styleUrls: ['./component.css']
 })
 export class ProductListComponent {
   products = products;
