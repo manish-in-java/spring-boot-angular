@@ -15,6 +15,7 @@
  */
 
 import { Component } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 import { products } from '../data';
 
@@ -27,6 +28,10 @@ import { products } from '../data';
 })
 export class ProductListComponent {
   products = products;
+
+  constructor(private titleService: Title) {
+    this.titleService.setTitle("Products")
+  }
 
   /*
    * Invoked when the user chooses to get notified when the product goes on

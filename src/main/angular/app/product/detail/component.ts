@@ -14,8 +14,9 @@
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import { Component, OnInit } from '@angular/core';
 import { ActivatedRoute } from '@angular/router';
+import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 import { products } from '../data';
 import { CartService } from '../../cart/service';
@@ -31,12 +32,15 @@ export class ProductDetailComponent implements OnInit {
 
   constructor(
     private route: ActivatedRoute,
-    private cartService: CartService
+    private cartService: CartService,
+    private titleService: Title
   ) { }
 
   ngOnInit(): void {
     this.route.paramMap.subscribe(params => {
       this.product = products[+params.get('productId')];
+
+      this.titleService.setTitle(this.product.name);
     });
   }
 
