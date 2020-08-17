@@ -15,6 +15,7 @@
  */
 
 import { Component, OnInit } from '@angular/core';
+import { FormBuilder } from '@angular/forms';
 import { Title } from '@angular/platform-browser';
 
 import { CartService } from '../service';
@@ -27,16 +28,33 @@ import { CartService } from '../service';
   templateUrl: './component.html'
 })
 export class CartDetailComponent implements OnInit {
+  checkoutForm;
   items;
 
   constructor(
     private cartService: CartService,
+    private formBuilder: FormBuilder,
     private titleService: Title
   ) {
+    this.checkoutForm = this.formBuilder.group({
+      name: '',
+      address: ''
+    });
+
     this.titleService.setTitle("Shopping Cart")
   }
 
   ngOnInit() {
     this.items = this.cartService.getItems();
+  }
+
+  onSubmit(customerData) {
+    // Process checkout data here
+
+    this.items = this.cartService.clearCart();
+
+    this.checkoutForm.reset();
+
+    window.alert('Your order has been submitted');
   }
 }
