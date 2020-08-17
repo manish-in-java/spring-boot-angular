@@ -16,7 +16,7 @@
 
 import { Component } from '@angular/core';
 
-import { products } from './data';
+import { products } from '../data';
 
 /*
  * Renders a list of products and allows user to interact with them.
