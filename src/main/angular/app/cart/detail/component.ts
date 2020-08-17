@@ -15,6 +15,7 @@
  */
 
 import { Component, OnInit } from '@angular/core';
+import { Title } from '@angular/platform-browser';
 
 import { CartService } from '../service';
 
@@ -29,8 +30,11 @@ export class CartDetailComponent implements OnInit {
   items;
 
   constructor(
-    private cartService: CartService
-  ) { }
+    private cartService: CartService,
+    private titleService: Title
+  ) {
+    this.titleService.setTitle("Shopping Cart")
+  }
 
   ngOnInit() {
     this.items = this.cartService.getItems();
