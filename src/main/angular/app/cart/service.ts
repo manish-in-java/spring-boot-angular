@@ -14,40 +14,43 @@
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import { Component, OnInit } from '@angular/core';
-import { ActivatedRoute } from '@angular/router';
-
-import { products } from '../data';
-import { CartService } from '../../cart/service';
+import { Injectable } from '@angular/core';
 
 /*
- * Displays details for a product
+ * Provides operations for managing the shopping cart.
  */
-@Component({
-  templateUrl: './component.html'
+@Injectable({
+  providedIn: 'root'
 })
-export class ProductDetailComponent implements OnInit {
-  product;
+export class CartService {
+  items = [];
 
-  constructor(
-    private route: ActivatedRoute,
-    private cartService: CartService
-  ) { }
-
-  ngOnInit(): void {
-    this.route.paramMap.subscribe(params => {
-      this.product = products[+params.get('productId')];
-    });
+  /*
+   * Adds a product to the cart.
+   *
+   * @param product The product to add.
+   */
+  addToCart(product) {
+    this.items.push(product);
   }
 
   /*
-   * Adds a product to the shopping cart.
+   * Clears all products currently in the cart.
    *
-   * @param The product to add.
+   * @return An empty cart.
    */
-  addToCart(product) {
-    this.cartService.addToCart(product);
+  clearCart() {
+    this.items = [];
 
-    window.alert('Your product has been added to the cart!');
+    return this.getItems();
+  }
+
+  /*
+   * Gets all products currently in the cart.
+   *
+   * @return All products currently in the cart.
+   */
+  getItems() {
+    return this.items;
   }
 }

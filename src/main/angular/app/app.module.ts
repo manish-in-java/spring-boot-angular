@@ -21,6 +21,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './layout/navigation/component';
+import { CartDetailComponent } from './cart/detail/component';
 import { ProductAlertComponent } from './product/alert/component';
 import { ProductDetailComponent } from './product/detail/component';
 import { ProductListComponent } from './product/listing/component';
@@ -36,11 +37,13 @@ import { ProductShareComponent } from './product/share/component';
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
       { path: 'products/:productId', component: ProductDetailComponent },
+      { path: 'cart', component: CartDetailComponent },
     ])
   ],
   declarations: [
     AppComponent,
     NavigationComponent,
+    CartDetailComponent,
     ProductAlertComponent,
     ProductDetailComponent,
     ProductListComponent,
