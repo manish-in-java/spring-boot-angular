@@ -14,6 +14,7 @@
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
+import { HttpClientModule } from '@angular/common/http';
 import { NgModule } from '@angular/core';
 import { BrowserModule } from '@angular/platform-browser';
 import { RouterModule } from '@angular/router';
@@ -26,6 +27,7 @@ import { ProductAlertComponent } from './product/alert/component';
 import { ProductDetailComponent } from './product/detail/component';
 import { ProductListComponent } from './product/listing/component';
 import { ProductShareComponent } from './product/share/component';
+import { ShippingDetailComponent } from './shipping/detail/component';
 
 /*
  * Angular application.
@@ -33,11 +35,13 @@ import { ProductShareComponent } from './product/share/component';
 @NgModule({
   imports: [
     BrowserModule,
+    HttpClientModule,
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
-      { path: 'products/:productId', component: ProductDetailComponent },
       { path: 'cart', component: CartDetailComponent },
+      { path: 'products/:productId', component: ProductDetailComponent },
+      { path: 'shipping', component: ShippingDetailComponent },
     ])
   ],
   declarations: [
@@ -47,7 +51,8 @@ import { ProductShareComponent } from './product/share/component';
     ProductAlertComponent,
     ProductDetailComponent,
     ProductListComponent,
-    ProductShareComponent
+    ProductShareComponent,
+    ShippingDetailComponent
   ],
   bootstrap: [AppComponent]
 })
