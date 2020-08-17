@@ -14,7 +14,7 @@
  * OR THE USE OR OTHER DEALINGS IN THE SOFTWARE.
  */
 
-import { Component, OnInit } from '@angular/core';
+import { Component } from '@angular/core';
 
 /*
  * Provides a navigation bar for the application.
@@ -23,9 +23,4 @@ import { Component, OnInit } from '@angular/core';
   selector: 'app-navigation',
   templateUrl: './component.html'
 })
-export class NavigationComponent implements OnInit {
-  constructor() { }
-
-  ngOnInit() {
-  }
-}
+export class NavigationComponent { }
