@@ -22,6 +22,7 @@ import { ReactiveFormsModule } from '@angular/forms';
 import { AppComponent } from './app.component';
 import { NavigationComponent } from './layout/navigation/component';
 import { ProductAlertComponent } from './product/alert/component';
+import { ProductDetailComponent } from './product/detail/component';
 import { ProductListComponent } from './product/listing/component';
 import { ProductShareComponent } from './product/share/component';
 
@@ -34,15 +35,17 @@ import { ProductShareComponent } from './product/share/component';
     ReactiveFormsModule,
     RouterModule.forRoot([
       { path: '', component: ProductListComponent },
+      { path: 'products/:productId', component: ProductDetailComponent },
     ])
   ],
   declarations: [
     AppComponent,
     NavigationComponent,
     ProductAlertComponent,
+    ProductDetailComponent,
     ProductListComponent,
     ProductShareComponent
   ],
-  bootstrap: [ AppComponent ]
+  bootstrap: [AppComponent]
 })
 export class AppModule { }
